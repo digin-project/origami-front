@@ -20,8 +20,9 @@ angular
     .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', { templateUrl: 'views/main.html', controller: 'MainCtrl' })
+            .when('/interface', { templateUrl: 'views/interface/index.html', controller: 'InterfaceCtrl' })
             .otherwise({ redirectTo: '/' });
 
-        if(window.history && window.history.pushState)
-            $locationProvider.html5Mode(true);
+        // if(window.history && window.history.pushState)
+        //     $locationProvider.html5Mode(true);
     });

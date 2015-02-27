@@ -33,13 +33,13 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
-      js: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        }
-      },
+    //   js: {
+    //     files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+    //     tasks: ['newer:jshint:all'],
+    //     options: {
+    //       livereload: '<%= connect.options.livereload %>'
+    //     }
+    //   },
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
@@ -111,24 +111,24 @@ module.exports = function (grunt) {
     },
 
     // Make sure code styles are up to par and there are no obvious mistakes
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
-      },
-      all: {
-        src: [
-          'Gruntfile.js',
-          '<%= yeoman.app %>/scripts/{,*/}*.js'
-        ]
-      },
-      test: {
-        options: {
-          jshintrc: 'test/.jshintrc'
-        },
-        src: ['test/spec/{,*/}*.js']
-      }
-    },
+    // jshint: {
+    //   options: {
+    //     jshintrc: '.jshintrc',
+    //     reporter: require('jshint-stylish')
+    //   },
+    //   all: {
+    //     src: [
+    //       'Gruntfile.js',
+    //       '<%= yeoman.app %>/scripts/{,*/}*.js'
+    //     ]
+    //   },
+    //   test: {
+    //     options: {
+    //       jshintrc: 'test/.jshintrc'
+    //     },
+    //     src: ['test/spec/{,*/}*.js']
+    //   }
+    // },
 
     // Empties folders to start fresh
     clean: {
@@ -234,16 +234,16 @@ module.exports = function (grunt) {
     //   dist: {}
     // },
 
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg,gif}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
+    // imagemin: {
+    //   dist: {
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= yeoman.app %>/images',
+    //       src: '{,*/}*.{png,jpg,jpeg,gif}',
+    //       dest: '<%= yeoman.dist %>/images'
+    //     }]
+    //   }
+    // },
 
     svgmin: {
       dist: {
