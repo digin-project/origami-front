@@ -9,13 +9,14 @@
 [ng-drop].drag-enter{
     border:solid 5px red;
 }
+ul li { margin-bottom: 30px; }
 </style>
 
 <div class="container-fluid">
     <div class="col-lg-2">
         <ul>
             <li ng-repeat="e in el">
-                <div ng-drag="true" ng-drag-data="el" ng-center-anchor="true" ng-center-anchor="true" style="width:50px;height:50px;background:red;">
+                <div ng-drag="true" ng-drag-data="e" ng-center-anchor="true" ng-center-anchor="true" style="width:50px;height:50px;background:red;">
                     {{ e.content }}
                 </div>
             </li>
@@ -23,7 +24,7 @@
     </div>
     <div class="col-lg-10" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" style="height: 200px; background:pink !important;">
         <!-- <iframe width="100%" height="100%" ></iframe> -->
-        <div ng-repeat="e in dropped" style="width:50px;height:50px;background:red;">
+        <div ng-repeat="e in dropped" ng-style="e.styles">
             {{ e.content }}
         </div>
     </div>

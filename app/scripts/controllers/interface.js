@@ -3,7 +3,24 @@
 angular.module('origami')
     .controller('InterfaceCtrl', function($scope, $http, $log) {
 
-        $scope.el = [{content: "<p>derp</p>"},{content: "<p>lol</p>"}];
+        $scope.el = [
+            {
+                content: "<p>derp</p>",
+                styles : {
+                    width: "100%",
+                    height: "200px",
+                    background: "green"
+                }
+            },
+            {
+                content: "<p>lol</p>",
+                styles : {
+                    width: "100%",
+                    height: "400px",
+                    background: "yellow"
+                }
+            }
+        ];
         $scope.dropped = [];
 
         // var iframe = angular.element('iframe')[0].contentWindow.document,
