@@ -8,9 +8,10 @@ angular.module('origami')
                 content: "<p>derp</p>",
                 styles : {
                     width: "100%",
-                    height: "200px",
-                    background: "green"
-                }
+                    height: "500px",
+                    background: "url('http://2015.digin.fr/images/construct_2_light.d0388e0f.jpg') center center no-repeat"
+                },
+                html : "<div style='margin-top: 150px; margin-left: 50px;'><h1 style='color:  #fff;'>Mon super titre à la Froont</h1></div>"
             },
             {
                 content: "<p>lol</p>",
@@ -33,5 +34,8 @@ angular.module('origami')
             console.log("drop success, data:", data);
             $scope.dropped.push(data);
             console.log($scope.dropped);
+
+            console.log($('#user-website').html());
         }
+
     });
