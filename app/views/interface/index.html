@@ -1,10 +1,30 @@
+<style media="screen">
+[ng-drag]{
+       -moz-user-select: -moz-none;
+       -khtml-user-select: none;
+       -webkit-user-select: none;
+       -ms-user-select: none;
+       user-select: none;
+   }
+[ng-drop].drag-enter{
+    border:solid 5px red;
+}
+</style>
+
 <div class="container-fluid">
     <div class="col-lg-2">
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+        <ul>
+            <li ng-repeat="e in el">
+                <div ng-drag="true" ng-drag-data="el" ng-center-anchor="true" ng-center-anchor="true" style="width:50px;height:50px;background:red;">
+                    {{ e.content }}
+                </div>
+            </li>
+        </ul>
     </div>
-    <div class="col-lg-10">
-        <iframe width="100%" height="100%"></iframe>
+    <div class="col-lg-10" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" style="height: 200px; background:pink !important;">
+        <!-- <iframe width="100%" height="100%" ></iframe> -->
+        <div ng-repeat="e in dropped" style="width:50px;height:50px;background:red;">
+            {{ e.content }}
+        </div>
     </div>
 </div>
